@@ -1,0 +1,39 @@
+[package]
+name = "dynachem"
+version = "0.1.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+description = "An open-source educational chemistry app that teaches through tactile, interactive simulations"
+repository = "https://github.com/ontodyn/dyna-chem"
+
+[dependencies]
+# Math library (same as Bevy uses internally)
+glam = { version = "0.27", features = ["std"] }
+
+# Bevy with minimal features for headless testing
+# Full features enabled when we need rendering
+[dependencies.bevy]
+version = "0.14"
+default-features = false
+features = [
+    "bevy_asset",
+    "bevy_core_pipeline",
+    "bevy_render",
+    "bevy_winit",
+    "bevy_sprite",
+    "x11",  # For Linux windowing
+]
+
+[dev-dependencies]
+approx = "0.5"  # For floating-point comparison in tests
+
+[features]
+# Enable full Bevy features for actual app
+full = ["bevy/default"]
+
+# Faster compile times for development
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3

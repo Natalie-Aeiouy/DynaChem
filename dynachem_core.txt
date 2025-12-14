@@ -1,0 +1,5 @@
+Dynachem
+
+Goal: Make an open-source minimalistic evergreen app to teach chemistry, especially organic chemistry in a way that is tactile, intuitive, and fun.
+
+Method: Use a test driven development methodology (red phase: write failing tests watch them fail, green phase: write code to pass tests, blue phase: refactor and improve code and ensure it still passes tests). Achieve 100% test coverage for unit tests and i
